@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mail Page</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+        :root {
+            --fs-xsm: 12px;
+            --fs-sm: 16px;
+            --fs-md: 24px;
+            --fs-lg: 28px;
+            --fs-xl: 40px;
+
+            --color-maroon: #991A36;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            list-style-type: none;
+        }
+
+        .fs-sm {
+            font-size: var(--fs-sm);
+        }
+
+        .fs-md {
+            font-size: var(--fs-lg);
+        }
+
+        .fs-lg {
+            font-size: var(--fs-xl);
+        }
+
+        .fw-400 {
+            font-weight: 400;
+        }
+
+
+        .fw-500 {
+            font-weight: 500;
+        }
+
+        .fw-700 {
+            font-weight: 700;
+        }
+        .footer-black{
+            background-color: #000;
+            min-height: 130px;
+            padding-top: 30px;
+        }
+
+        .container {
+            margin-left: auto;
+            margin-right: auto;
+            width: 640px;
+            padding: 26px 26px 72px 26px;
+            border-radius: 16px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+            background: #EDEDED;
+            font-family: "Poppins", sans-serif;
+            box-shadow: 0px 4px 3px 0px rgba(89, 40, 229, 0.07), 0px 2px 2px 0px rgba(89, 40, 229, 0.06);
+        }
+
+        .sec-1 {
+            background: url("https://thumbs2.imgbox.com/16/d7/JH6N2N8p_t.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            padding: 33px 37px 32px 38px;
+        }
+
+        .sec-1 .heading {
+            margin-top: 0;
+            text-transform: uppercase;
+            font-size: var(--fs-xl);
+            line-height: 114.5%;
+        }
+
+        .sec-1 .pheading {
+            margin: 7px 73px 0 74px;
+            font-size: var(--fs-sm);
+            font-weight: 400;
+            line-height: 165.5%
+        }
+
+        .bold {
+            font-weight: 700;
+        }
+
+        .sec-1-button {
+            display: block;
+            border-radius: 6px;
+            border: 1px solid #000;
+            background: #E9BC02;
+            margin: 21px auto 0 auto;
+            padding: 19px 55px 19px 46px;
+            font-weight: 700;
+            font-size: var(--fs-sm);
+            transition: all 300ms linear;
+            cursor: pointer;
+        }
+
+        .sec-1-button:hover {
+            background-color:#FFF;
+            border-color: #E9BC02;
+            color: #E9BC02;
+        }
+
+        .mt-26 {
+            margin-top: 26px;
+        }
+
+        .br-18 {
+            border-radius: 18px;
+        }
+
+        .sec-2 {
+            padding: 58px 17px 18px 18px;
+            background-color: white;
+        }
+
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-7 {
+            margin-top: 7px;
+        }
+
+        .sec-2>.heading {
+            color: var(--color-maroon);
+            font-size: var(--fs-lg);
+            font-weight: 500;
+            line-height: 165.5%;
+        }
+
+        .sec-2>.pheading {
+            color: #000;
+            font-size: var(--fs-md);
+            font-weight: 700;
+            line-height: 165.5%;
+        }
+
+        .sec-2>div>p {
+            font-size: var(--fs-sm);
+            font-weight: 400;
+            line-height: 165.5%;
+            transition: all 300ms linear;
+        }
+
+        .sec-2>div>p:hover {
+            color: var(--color-maroon);
+        }
+
+        .grey-card {
+            border-radius: 18px;
+            background: #EDEDED;
+        }
+
+        .first {
+            padding: 51px 61px 16px 61px;
+            margin-top: 59px;
+        }
+
+        .grey-card p {
+            color: #191919;
+            text-align: center;
+            font-size: var(--fs-sm);
+            font-weight: 400;
+            line-height: 165.5%;
+        }
+
+        .second {
+            margin-top: 18px;
+            padding: 78px 61px 17px 61px;
+        }
+
+        .yellow-card {
+            margin-top: 18px;
+            background: url("https://thumbs2.imgbox.com/16/d7/JH6N2N8p_t.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            padding: 24px 39px;
+            border-radius: 18px;
+        }
+
+        .yellow-card .heading {
+            font-size: var(--fs-md);
+            font-weight: 700;
+            line-height: 165.5%;
+        }
+
+        .yellow-card p {
+            color: #4B3001;
+            font-size: var(--fs-sm);
+            font-weight: 400;
+            line-height: 165.5%;
+            text-align: left;
+            margin-top: 8px;
+        }
+
+        .svg-row {
+            margin-top: 22px;
+            width: 100%;
+            text-align: left;
+        }
+
+        .svg-row svg {
+            margin-left: 13px;
+            cursor: pointer;
+            /* transition: all 300ms linear; */
+        }
+
+        /* .svg-row svg:hover {} */
+
+        .svg-row svg:first-child {
+            margin-left: 0;
+        }
+
+        footer {
+            margin-left: auto;
+            margin-right: auto;
+            width: 640px;
+            border-radius: 16px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            background-color: #EDEDED;
+            box-shadow: 0px 4px 3px 0px rgba(89, 40, 229, 0.07), 0px 2px 2px 0px rgba(89, 40, 229, 0.06);
+        }
+
+        .footer-clr {
+            margin-left: auto;
+            margin-right: auto;
+            width: 640px;
+            background-color: black;
+            padding: 36px 81px 35px 81px;
+        }
+
+        .address {
+            color: #FFF;
+            font-size: var(--fs-xsm);
+            font-weight: 400;
+            line-height: 165.5%;
+            text-decoration-line: underline;
+        }
+
+        .address-span {
+            font-size: var(--fs-xsm);
+            font-weight: 400;
+            line-height: 165.5%;
+            color: #808080;
+        }
+
+        .unsubscribe {
+            color: #808080;
+            display: block;
+            text-align: center;
+            font-size: var(--fs-xsm);
+            font-weight: 400;
+            line-height: 165.5%;
+            text-decoration-line: underline;
+            margin-top: 6px;
+        }
+    </style>
+</head>
+
+<body style="background-color: #737373;
+padding-top: 20px;
+padding-bottom: 20px;">
+    <div class="container">
+        <img src="https://thumbs2.imgbox.com/33/82/jebohL3I_t.png" alt="Hero-image"
+            style="width: 587px; height: 384px; border-radius: 18px;">
+        <div class="sec-1 mt-26 br-18">
+            <h2 class="fw-400 heading text-center">thank you for joining our <span class="fw-700">waitlist</span></h2>
+            <h3 class="text-center subheading">Be on the lookout for a text with your check-in
+                instructions.</h3>
+            <button class="sec-1-button">See Our Menu</button>
+        </div>
+        <div class="sec-2 mt-26 br-18">
+            <div class="mx-auto text-center">
+                <h1 class="text-center heading">CLARKSVILLE, IN</h1>
+                <h2 class="text-center mt-7 subheading">Table for 2 at 04:06 PM</h2>
+                <p class="text-center mt-7">Name: Test, Test</p>
+                <p class="text-center mt-7">Confirmation #: 8235</p>
+                <p class="text-center mt-7">0 high chair required</p>
+                <p class="text-center mt-7">Ph: 5023201101</p>
+                <div class="grey-card first">
+                    <p>Keep in mind, this is not a reservation and as a courtesy to other guests, please don’t check in
+                        until your entire party
+                        is at the restaurant.</p>
+                    <img src="https://i.ibb.co/ky7YmR4/svg-meat-on-the-right.png" alt=""
+                        style="margin-left: 90%;margin-top: -10px;">
+                </div>
+                <div class="grey-card second">
+                    <p>If you need to cancel, or don’t receive your check-in instructions, please call the restaurant.
+                    </p>
+                    <img src="https://i.ibb.co/bLX7nWQ/svg-meat-on-the-left.png" alt=""
+                        style="margin-left: -105%; margin-top: -10px;">
+                </div>
+                <div class="yellow-card">
+                    <h4 class="heading">Review this store</h4>
+                    <p style="width: 90%;">Share your thoughts on your order with fellow customers and Queen of Sheba.
+                    </p>
+                    <div class="svg-row">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="39" height="38" viewBox="0 0 39 38" fill="none">
+                            <path
+                                d="M36.9269 12.4803L25.8991 11.5233L21.5928 1.38416C20.8182 -0.461388 18.1752 -0.461388 17.4005 1.38416L13.0942 11.5461L2.08925 12.4803C0.0842061 12.6397 -0.736039 15.146 0.790528 16.4676L9.15247 23.713L6.64616 34.4674C6.19047 36.4268 8.30944 37.9762 10.0411 36.9281L19.4967 31.232L28.9523 36.9509C30.6839 37.999 32.8029 36.4496 32.3472 34.4902L29.8409 23.713L38.2028 16.4676C39.7294 15.146 38.9319 12.6397 36.9269 12.4803ZM19.4967 26.9712L10.9297 32.1433L13.2081 22.3915L5.64364 15.8296L15.6233 14.9638L19.4967 5.78159L23.3928 14.9866L33.3725 15.8524L25.808 22.4143L28.0865 32.1661L19.4967 26.9712Z"
+                                fill="black" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="39" height="38" viewBox="0 0 39 38" fill="none">
+                            <path
+                                d="M36.9269 12.4803L25.8991 11.5233L21.5928 1.38416C20.8182 -0.461388 18.1752 -0.461388 17.4005 1.38416L13.0942 11.5461L2.08925 12.4803C0.0842061 12.6397 -0.736039 15.146 0.790528 16.4676L9.15247 23.713L6.64616 34.4674C6.19047 36.4268 8.30944 37.9762 10.0411 36.9281L19.4967 31.232L28.9523 36.9509C30.6839 37.999 32.8029 36.4496 32.3472 34.4902L29.8409 23.713L38.2028 16.4676C39.7294 15.146 38.9319 12.6397 36.9269 12.4803ZM19.4967 26.9712L10.9297 32.1433L13.2081 22.3915L5.64364 15.8296L15.6233 14.9638L19.4967 5.78159L23.3928 14.9866L33.3725 15.8524L25.808 22.4143L28.0865 32.1661L19.4967 26.9712Z"
+                                fill="black" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="39" height="38" viewBox="0 0 39 38" fill="none">
+                            <path
+                                d="M36.9269 12.4803L25.8991 11.5233L21.5928 1.38416C20.8182 -0.461388 18.1752 -0.461388 17.4005 1.38416L13.0942 11.5461L2.08925 12.4803C0.0842061 12.6397 -0.736039 15.146 0.790528 16.4676L9.15247 23.713L6.64616 34.4674C6.19047 36.4268 8.30944 37.9762 10.0411 36.9281L19.4967 31.232L28.9523 36.9509C30.6839 37.999 32.8029 36.4496 32.3472 34.4902L29.8409 23.713L38.2028 16.4676C39.7294 15.146 38.9319 12.6397 36.9269 12.4803ZM19.4967 26.9712L10.9297 32.1433L13.2081 22.3915L5.64364 15.8296L15.6233 14.9638L19.4967 5.78159L23.3928 14.9866L33.3725 15.8524L25.808 22.4143L28.0865 32.1661L19.4967 26.9712Z"
+                                fill="black" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="39" height="38" viewBox="0 0 39 38" fill="none">
+                            <path
+                                d="M36.9269 12.4803L25.8991 11.5233L21.5928 1.38416C20.8182 -0.461388 18.1752 -0.461388 17.4005 1.38416L13.0942 11.5461L2.08925 12.4803C0.0842061 12.6397 -0.736039 15.146 0.790528 16.4676L9.15247 23.713L6.64616 34.4674C6.19047 36.4268 8.30944 37.9762 10.0411 36.9281L19.4967 31.232L28.9523 36.9509C30.6839 37.999 32.8029 36.4496 32.3472 34.4902L29.8409 23.713L38.2028 16.4676C39.7294 15.146 38.9319 12.6397 36.9269 12.4803ZM19.4967 26.9712L10.9297 32.1433L13.2081 22.3915L5.64364 15.8296L15.6233 14.9638L19.4967 5.78159L23.3928 14.9866L33.3725 15.8524L25.808 22.4143L28.0865 32.1661L19.4967 26.9712Z"
+                                fill="black" />
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="39" height="38" viewBox="0 0 39 38" fill="none">
+                            <path
+                                d="M36.9269 12.4803L25.8991 11.5233L21.5928 1.38416C20.8182 -0.461388 18.1752 -0.461388 17.4005 1.38416L13.0942 11.5461L2.08925 12.4803C0.0842061 12.6397 -0.736039 15.146 0.790528 16.4676L9.15247 23.713L6.64616 34.4674C6.19047 36.4268 8.30944 37.9762 10.0411 36.9281L19.4967 31.232L28.9523 36.9509C30.6839 37.999 32.8029 36.4496 32.3472 34.4902L29.8409 23.713L38.2028 16.4676C39.7294 15.146 38.9319 12.6397 36.9269 12.4803ZM19.4967 26.9712L10.9297 32.1433L13.2081 22.3915L5.64364 15.8296L15.6233 14.9638L19.4967 5.78159L23.3928 14.9866L33.3725 15.8524L25.808 22.4143L28.0865 32.1661L19.4967 26.9712Z"
+                                fill="black" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-black">
+            <p class="text-center"><span class="address">375 Alabama Street suite 200. San Francisco, California
+                    94110</span><span class="address-span">Ph: (888) 458-5376</span>
+            </p>
+            <a href="#" class="unsubscribe">Unsubscribe from this list</a>
+        </div>
+    </footer>
+</body>
+
+</html>
